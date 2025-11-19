@@ -58,7 +58,7 @@ app.get("/", (req, res) => {
         icon: "🗑️",
         title: "Dumpster Rental",
         description:
-          "Large dumpster rental for big projects."
+          "14 yard dumpster for rental. $300 + dump fees for a 5 day rental. Includes drop off and 1 disposal."
       },
       {
         icon: "🌿",
@@ -108,3 +108,6 @@ app.get("/gallery", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Hiatt Services site running on port ${PORT}`);
 });
+
+
+
