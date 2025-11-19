@@ -1,0 +1,15 @@
+<footer class="hs-footer">
+  <div class="hs-container hs-footer-inner">
+    <div class="hs-footer-left">
+      <p class="hs-footer-brand"><%= businessName %></p>
+      <p class="hs-footer-copy">
+        &copy; <%= new Date().getFullYear() %> <%= businessName %>. All rights reserved.
+      </p>
+    </div>
+    <div class="hs-footer-right">
+      <a href="tel:<%= phone.replace(/[^0-9]/g, '') %>" class="hs-footer-phone">
+        <span>Call</span> <span><%= phone %></span>
+      </a>
+    </div>
+  </div>
+</footer>

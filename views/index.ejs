@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title><%= businessName %> — Tree Removal, Excavation & Site Prep</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+  <meta
+    name="description"
+    content="Hiatt Services provides tree removal, land clearing, excavation, and demolition services in the Inland Northwest."
+  />
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <%- include("partials/header") %>
+
+  <main>
+    <section class="hs-hero">
+        <div class="hs-hero-media"></div>
+        <div class="hs-hero-overlay"></div>
+
+        <div class="hs-container hs-hero-inner">
+            <!-- Left side: text -->
+            <div class="hs-hero-copy">
+            <p class="hs-hero-kicker">Serving the Inland Northwest</p>
+            <h1><%= tagline %></h1>
+            <p class="hs-hero-subtitle"><%= heroSubtitle %></p>
+
+            <div class="hs-hero-actions">
+                <a href="tel:<%= phone.replace(/[^0-9]/g, '') %>" class="hs-btn hs-btn-primary">
+                Call <%= phone %>
+                </a>
+                <a href="#contact" class="hs-btn hs-btn-ghost">
+                Get a free estimate
+                </a>
+            </div>
+
+            <div class="hs-hero-badges">
+                <span>• Licensed & Insured</span>
+                <span>• Over 10 Years Experience</span>
+                <span>• Residential & Commercial</span>
+            </div>
+            </div>
+
+            <!-- Right side: logo -->
+            <div class="hs-hero-side">
+            <div class="hs-hero-logo-card">
+                <img src="/img/logo.png" alt="Hiatt Services Logo" class="hs-hero-logo" />
+            </div>
+            </div>
+        </div>
+        </section>
+
+    <section class="hs-section" id="services">
+      <div class="hs-container">
+        <header class="hs-section-header">
+          <h2>What We Do</h2>
+          <p>
+            From tight urban lots to open acreage, we handle tree work, earthwork, and demolition
+            with safety and efficiency in mind.
+          </p>
+        </header>
+
+        <div class="hs-grid hs-services-grid">
+          <% services.forEach(function(service) { %>
+            <article class="hs-card hs-service-card">
+              <div class="hs-service-icon"><%= service.icon %></div>
+              <h3><%= service.title %></h3>
+              <p><%= service.description %></p>
+            </article>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <section class="hs-section hs-section-muted" id="about">
+      <div class="hs-container hs-split">
+        <div>
+          <h2>Why Choose <%= businessName %>?</h2>
+          <p>
+            Every property is different. We take the time to understand your site, utilities,
+            and access points so the work is done safely, quickly, and cleanly.
+          </p>
+          <ul class="hs-checklist">
+            <li>Careful planning around homes, power lines, and outbuildings</li>
+            <li>Proper equipment for tight backyards and steep terrain</li>
+            <li>Complete haul-off and clean-up options</li>
+            <li>Clear communication on schedule and budget</li>
+          </ul>
+        </div>
+        <div class="hs-callout">
+          <h3>Not sure where to start?</h3>
+          <p>
+            Text us a few photos of your project and we can usually give ballpark
+            options before we visit.
+          </p>
+          <a href="tel:<%= phone.replace(/[^0-9]/g, '') %>" class="hs-btn hs-btn-primary hs-btn-block">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="hs-section" id="projects">
+      <div class="hs-container">
+        <header class="hs-section-header">
+          <h2>Our Work</h2>
+          <p>A glimpse at the kind of work we do for homeowners, farms and builders.</p>
+        </header>
+
+        <div class="hs-grid hs-projects-grid">
+          <article class="hs-card hs-project-card">
+            <div class="hs-project-image hs-project-image-tree"></div>
+            <div class="hs-project-body">
+              <h3>Hazardous Tree Removal</h3>
+              <p>
+                Carefully removed large pines close to a home and shop, with
+                stump grinding and haul-off included.
+              </p>
+            </div>
+          </article>
+
+          <article class="hs-card hs-project-card">
+            <div class="hs-project-image hs-project-image-excavation"></div>
+            <div class="hs-project-body">
+              <h3>Driveway & Site Grading</h3>
+              <p>
+                Re-shaped a steep driveway, added rock, and prepped a level pad
+                for a new shop building.
+              </p>
+            </div>
+          </article>
+
+          <article class="hs-card hs-project-card">
+            <div class="hs-project-image hs-project-image-demo"></div>
+            <div class="hs-project-body">
+              <h3>Site Prep</h3>
+              <p>
+                Safely prepping your site for construction.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="hs-section hs-section-dark" id="contact">
+      <div class="hs-container hs-contact-grid">
+        <div>
+          <h2>Contact Us</h2>
+          <p>
+            Tell us a little about your project and we’ll follow up with next steps
+            and scheduling options.
+          </p>
+
+          <div class="hs-contact-details">
+            <p><strong>Phone:</strong> <a href="tel:<%= phone.replace(/[^0-9]/g, '') %>"><%= phone %></a></p>
+            <p><strong>Service area:</strong> Inland Northwest & surrounding communities</p>
+            <p><strong>Hours:</strong> By appointment, Monday–Saturday</p>
+          </div>
+        </div>
+
+        <div class="hs-card hs-contact-card">
+          <p class="hs-contact-card-title">Ready to get started?</p>
+          <p class="hs-contact-card-text">
+            Call or text us with your name, address, and a quick description
+            of the work you need done.
+          </p>
+          <a href="tel:<%= phone.replace(/[^0-9]/g, '') %>" class="hs-btn hs-btn-primary hs-btn-block">
+            Call <%= phone %>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("partials/footer") %>
+</body>
+</html>

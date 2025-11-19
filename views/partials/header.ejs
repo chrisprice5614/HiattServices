@@ -1,0 +1,26 @@
+<header class="hs-header">
+  <div class="hs-container hs-header-inner">
+    <div class="hs-logo-block">
+    <img src="/img/favicon.ico" alt="Hiatt Services Logo" class="hs-logo-img">
+
+    <div class="hs-logo-text">
+        <span class="hs-logo-name"><%= businessName %></span>
+        <span class="hs-logo-tagline">Outdoor & Site Services</span>
+    </div>
+    </div>
+
+
+    <nav class="hs-nav">
+      <a href="/">Home</a>
+      <a href="/contact">Contact</a>
+      <a href="/gallery">Gallery</a>
+    </nav>
+
+    <div class="hs-header-phone">
+      <a href="tel:<%= phone.replace(/[^0-9]/g, '') %>" class="hs-phone-pill">
+        <span class="hs-phone-label">Call now</span>
+        <span class="hs-phone-number"><%= phone %></span>
+      </a>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Gallery — <%= businessName %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+</head>
+<body>
+  <%- include("partials/header") %>
+
+  <main class="hs-section hs-gallery-page">
+    <div class="hs-container">
+
+      <header class="hs-section-header" style="margin-bottom: 30px;">
+        <h2>Project Gallery</h2>
+        <p>
+          A look at some of the tree work, excavation, site prep and clean-ups
+          we’ve done for homeowners, landowners and builders.
+        </p>
+      </header>
+
+      <% if (images.length === 0) { %>
+        <div class="hs-card" style="text-align:center;">
+          <p style="margin:0;">
+            No photos are in the gallery yet.  
+            Add images to <code>/public/img/gallery</code> and they will appear here automatically.
+          </p>
+        </div>
+      <% } else { %>
+        <div class="hs-gallery-grid">
+          <% images.forEach(function(img) { 
+               const label = img
+                 .replace(/\.[^.]+$/, "")         // remove extension
+                 .replace(/[-_]+/g, " ")          // dashes/underscores -> spaces
+                 .replace(/\b(\w)/g, c => c.toUpperCase()); // title case
+          %>
+            <figure class="hs-gallery-tile">
+              <div class="hs-gallery-image-wrap">
+                <img
+                  src="/img/gallery/<%= img %>"
+                  alt="<%= label %>"
+                  loading="lazy"
+                  class="hs-gallery-img"
+                />
+                <div class="hs-gallery-overlay">
+
+                </div>
+              </div>
+            </figure>
+          <% }) %>
+        </div>
+      <% } %>
+
+      <div class="hs-gallery-footer-cta">
+        <p>
+          Want results like this on your property?
+        </p>
+        <a href="tel:<%= phone.replace(/[^0-9]/g, '') %>" class="hs-btn hs-btn-primary">
+          Call <%= phone %>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <%- include("partials/footer") %>
+</body>
+</html>
