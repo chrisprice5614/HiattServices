@@ -105,6 +105,14 @@ app.get("/gallery", (req, res) => {
   });
 });
 
+app.get("/privacy", (req, res) => {
+  res.render("privacy", {
+    businessName: BUSINESS_NAME,
+    phone: PHONE
+  });
+});
+
+
 app.listen(PORT, () => {
   console.log(`Hiatt Services site running on port ${PORT}`);
 });
